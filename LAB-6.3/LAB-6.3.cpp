@@ -10,20 +10,22 @@
 
 using namespace std;
 
+int Max(int* a, const int n)
+{
+	int max = 0;
+	for (int i = 1; i < n; i++)
+		if (a[i] > max)
+			max = a[i];
+
+	return max;
+}
+
 int main()
 {
-    int a[10] = { 1,13,7,4,11,32,47,29,9,55 };
-    int max = 0;
+	const int n = 10;
+	int a[n] = { 1,3,2,6,15,27,9,61,33,42 };
 
-    for (int i = 0; i < 10; i++)
-    {
-        if (max < a[i])
-        {
-            max = a[i];
-        }
-    }
+	cout << "Max = " << Max(a, n) << endl;
 
-    cout << "Max = " << max << endl;
-
-    return 0;
+	return 0;
 }
